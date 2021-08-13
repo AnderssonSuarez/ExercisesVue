@@ -1,2 +1,0 @@
-# exercisesVue
-Ejercicios en Vue
