@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <div id = "ejercicio1">
+        <div class="container">
+            <h3>Calculo del Valor a Pagar</h3>
+            <br>
+            <h2 v-text="error"></h2>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Valor Compra</span>
+                <input v-model.number="valcompra" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Valor Descuento</span>
+                <input v-model.number="valdes" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Total a Pagar</span>
+                <input v-model.number="total" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
+            </div>
+            <button @click = "totalp" type="button" class="btn btn-success">Calcular</button>
+        </div>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/ejercicio1.js"></script>
+</html>
