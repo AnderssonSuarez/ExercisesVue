@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Ejercicio2</title>
+</head>
+<body>
+    <div id = "ejercicio2">
+        <div class="container">
+            <h3>Valor de las Copias</h3>
+            <br>
+            <h1 v-text="error"></h1>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Número de Copias</span>
+                <input v-model.number ="numcopias" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Valor por Copia</span>
+                <input v-model.number="valparcial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Total a Pagar</span>
+                <input v-model.number="valortot" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
+            </div>
+            <button @click ="total" type="button" class="btn btn-success">Calcular</button>
+        </div>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/ejercicio2.js"></script>
+</html>
