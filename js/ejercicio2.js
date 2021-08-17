@@ -23,9 +23,6 @@ var ejercicio2 = new Vue({
                 this.error = "Ingresó una cantidad negativa o cero, inténtelo de nuevo"
             }
         }
-
     }
 }
-
-
 )
