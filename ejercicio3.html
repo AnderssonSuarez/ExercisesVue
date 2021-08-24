@@ -24,21 +24,22 @@
             </div>
             <br>
             <button @click = "calcularPrecio" type="button" class="btn btn-primary">Agregar</button> 
-            <button @click = "calcularPrecio" type="button" class="btn btn-success">Pagar</button>   
+            <button @click = "totalPagar" type="button" class="btn btn-success">Pagar</button>   
             <br>
             <br>
             <div class="input-group input-group-sm mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Precio Parcial</span>
                 <input v-model.number = "total" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
             </div>
-            <div class="input-group input-group-sm mb-3">
+            <div v-show ="isPagar" class="input-group input-group-sm mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Precio Total</span>
                 <input v-model.number = "tPagar" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
             </div>  
-            <div class="input-group input-group-sm mb-3">
+            <div v-show="isPagar" class="input-group input-group-sm mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Efectivo</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" >
+                <input v-model = "efectivo" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" >
             </div> 
+            <button v-show ="isPagar" @click = "cambio" type="button" class="btn btn-danger">Cambio</button>   
         </div>
     </div>
 </body>

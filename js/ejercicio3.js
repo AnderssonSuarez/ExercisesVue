@@ -8,7 +8,10 @@ var ejercicio3 = new Vue({
         cant: 1,
         total: 0,
         tPagar: 0,
-        items: 0
+        items: 0,
+        isPagar: 0,
+        vueltas: 0,
+        tEfectivo: 0
     },
 
     methods: {
@@ -27,7 +30,21 @@ var ejercicio3 = new Vue({
         },
         totalPagar()
         {
-            
+            this.isPagar = 1;
+        },
+        cambio()
+        {
+            if (this.efectivo < this.tPagar)
+            {
+                cambio = this.tPagar - this.efectivo;
+                alert ("Falta " + cambio + " Pesos para realizar la compra")
+            }else {
+                cambio = this.efectivo - this.tPagar;
+                alert ("Su cambio es: " + cambio + " Pesos")
+            }
+            this.isPagar = 0;
+            this.tPagar = 0;
+            this.total = 0;
         }
     }
 }
