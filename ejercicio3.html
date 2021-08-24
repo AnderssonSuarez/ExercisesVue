@@ -5,35 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Total a Pagar</title>
+    <title>Supermercado</title>
 </head>
 <body>
     <div id  = "ejercicio3">
         <div class="container">
             <h3>Calculo Total a Pagar</h3>
             <br>
-            <h1 v-text = "error"></h1>
+            <select v-model="opcion" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option value = "0" selected>Seleccione el producto que desea comprar...</option>
+                <option value="1">Pera</option>
+                <option value="2">Piña</option>
+            </select>
+            <br>
+            <div class="input-group mb-2">
+                <span  class="input-group-text" id="basic-addon1">Cantidad</span>
+                <input v-model.number = "cant" type="text" class="form-control" placeholder="Ingrese la cantidad de fruta que desea comprar" >
+            </div>
+            <br>
+            <button @click = "calcularPrecio" type="button" class="btn btn-primary">Agregar</button> 
+            <button @click = "calcularPrecio" type="button" class="btn btn-success">Pagar</button>   
+            <br>
+            <br>
             <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad de Piñas</span>
-                <input v-model.number = "cpiñas" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Precio Parcial</span>
+                <input v-model.number = "total" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
             </div>
             <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad de Peras</span>
-                <input v-model.number = "cperas" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-            </div>
+                <span class="input-group-text" id="inputGroup-sizing-sm">Precio Total</span>
+                <input v-model.number = "tPagar" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
+            </div>  
             <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Valor Compra</span>
-                <input v-model.number ="valcompra" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
-            </div>
-            <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Descuento</span>
-                <input v-model.number ="desc" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
-            </div>
-            <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Total a Pagar</span>
-                <input v-model.number = "totalpag" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
-            </div>
-            <button @click = "totp" type="button" class="btn btn-success">Calcular</button>
+                <span class="input-group-text" id="inputGroup-sizing-sm">Efectivo</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" >
+            </div> 
         </div>
     </div>
 </body>

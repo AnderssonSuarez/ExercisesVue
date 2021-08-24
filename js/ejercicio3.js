@@ -2,31 +2,32 @@ var ejercicio3 = new Vue({
     el: "#ejercicio3",
     
     data:{
-        cpiñas: null, 
-        cperas: null, 
-        valcompra: null,
-        desc: null, 
-        totalpag: null,
-        error: null
+        opcion: "0",
+        pPera: 600,
+        pPina: 1800,
+        cant: 1,
+        total: 0,
+        tPagar: 0,
+        items: 0
     },
 
     methods: {
-        totp ()
+        calcularPrecio ()
         {
-            this.valcompra = (this.cperas * 600) + (this.cpiñas * 1800);
-            if (this.valcompra > 10000)
+            if (this.opcion == "0")
             {
-                this.desc = this.valcompra * 0.1;
-                this.totalpag = this.valcompra + this.desc;
-            } else if (this.valcompra >= 0 && this.valcompra <= 10000)
-            {
-                this.totalpag = this.valcompra;
-                this.desc = 0;
-            }else if (this.valcompra < 0)
-            {
-                this.valcompra = 0;
-                this.error = "Ha introducido una cantidad negativa, inténtelo nuevamente"
+                this.total = this.cant * 0;
+            }else if (this.opcion == "1"){
+                this.total = this.cant * this.pPera;
+            }else {
+                this.total = this.cant * this.pPina;
             }
+            this.tPagar += this.total;
+            this.items += 1;
+        },
+        totalPagar()
+        {
+            
         }
     }
 }
