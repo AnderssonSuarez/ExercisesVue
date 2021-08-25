@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Arroz</title>
+</head>
+<body>
+    <div id = "arroz">
+        <div class="container">
+            <h2>Distribuidora de arroz</h2>
+            <br>
+            <h5 class="text-muted" >Disponible en stock</h4>
+                <div class="input-group sm-2">
+                    <span  class="input-group-text bg-dark text-white" id="basic-addon1">Bodega 1</span>
+                    <span v-text="cantBod1" class="form-control" aria-describedby="basic-addon-1" >
+                </div>
+                <br>
+                <div class="input-group sm-2">
+                    <span  class="input-group-text bg-primary text-white" id="basic-addon1">Bodega 2</span>
+                    <span v-text="cantBod2" class="form-control" aria-describedby="basic-addon-1" >
+                </div>
+            <br>
+            <br>
+            <h6>Indique la bodega en la cual se realizará la venta</h6>
+            <select  v-model = "opBod" class="form-select form-select-sm mb-2 text-muted" aria-label=".form-select-lg example">
+                <option value = "0" selected>Seleccione una opción</option>
+                <option value="1">Bodega 1</option>
+                <option value="2">Bodega 2</option>
+            </select>
+            <select  v-model = "opMed" class="form-select form-select-sm mb-2 text-muted" aria-label=".form-select-lg example">
+                <option value = "0" selected>Seleccione una opción</option>
+                <option value="1">Libras</option>
+                <option value="2">Kilos</option>
+            </select>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Monto: </span>
+                <input v-model.number="cant" type="text" class="form-control" placeholder="Ingrese cantidad" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="d-grid gap-2">
+                <button @click ="descBod" type="button" class="btn btn-success btn-sm">Realizar Venta</button>
+            </div>
+            <br>
+            <div class="d-grid gap-2">
+                <button v-if = "isBoton" @click="verVentas" type="button" class="btn btn-dark btn-sm">Ver Ventas</button>
+                <button v-else @click = "ocultarVentas" type="button" class="btn btn-primary btn-sm">Ocultar ventas </button>
+            </div>
+            <br>
+            <div v-show="isVenta">
+                <h5>Ventas realizadas</h5>
+                <h6 v-text ="getVentaBod1()" ></h6>
+                <h6 v-text ="getVentaBod2()" ></h6>
+                </div>
+        </div>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/arroz.js"></script>
+</html>
