@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Arrays</title>
+</head>
+<body>
+    <div id = "array">
+        <div class="container">
+            <!--<h1 v-text = "valor" ></h1>-->
+            <div v-for="item in arrayFrutas" >
+                {{item}}
+            </div>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option value ="0">Seleccione una fruta</option>
+                <option v-for="item in arrayFrutas" v-text = "item"></option>
+            </select>
+            <br>
+            <!--<h1 v-text="cont"></h1>-->
+            <div v-for = "item in arrayColores">
+                {{item}}
+            </div>
+            <!--<button @click="imprimir" type="button" class="btn btn-primary">Aceptar</button>-->
+        </div>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/array.js"></script>
+</html>
