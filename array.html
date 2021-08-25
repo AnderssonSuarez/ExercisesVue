@@ -10,19 +10,29 @@
 <body>
     <div id = "array">
         <div class="container">
+            <br>
             <!--<h1 v-text = "valor" ></h1>-->
-            <div v-for="item in arrayFrutas" >
-                {{item}}
-            </div>
+            <!--<div v-for="item in arrayFrutas" >-->
+            <!-- {{item}}-->
+            <!--</div>-->
             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                 <option value ="0">Seleccione una fruta</option>
                 <option v-for="item in arrayFrutas" v-text = "item"></option>
             </select>
             <br>
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option value = "0">Seleccione un Color</option>
+                <option v-for = "item in arrayColores" v-text="item" ></option>
+            </select>
+            <br>
+            <select class="form-select" multiple aria-label="multiple select example">
+                <option value="0" >Seleccione una Verdura</option>
+                <option v-for ="item in arrayVerduras" v-text ="item">Seleccione una Verdura</option>
+            </select>
             <!--<h1 v-text="cont"></h1>-->
-            <div v-for = "item in arrayColores">
-                {{item}}
-            </div>
+            <!-- <div v-for = "item in arrayColores">-->
+            <!--    {{item}}-->
+            <!--</div>-->
             <!--<button @click="imprimir" type="button" class="btn btn-primary">Aceptar</button>-->
         </div>
     </div>

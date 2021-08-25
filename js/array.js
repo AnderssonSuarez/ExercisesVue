@@ -5,7 +5,8 @@ var array = new Vue({
         arrayFrutas:['Pera', 'Piña', 'Manzana', 'Lulo'],  
         valor: "",
         arrayColores:['Amarillo', 'Azul', 'Rojo', 'Verde'],
-        cont: ""
+        cont: "",
+        arrayVerduras: ['Zanahoria', 'Espinaca', 'Pepino', 'Remolacha']
     },
     methods:{
 
