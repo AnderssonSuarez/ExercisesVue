@@ -16,10 +16,11 @@ var retiro = new Vue({
                 this.valor = 50000;
             }else if (this.opcValor == "4"){
                 this.valor = 100000;
+            }else if (this.opcValor == "5"){
+                this.valor = 150000;
             }
         },
-        validarSaldo(){
-            this.getValor();
+        validarSaldo(){            
             if (this.valor > this.saldo) {
                 Swal.fire(
                     'Error al retirar!',
