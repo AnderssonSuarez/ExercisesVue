@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Factura</title>
+</head>
+<body>
+    <div id="ejerFactura" class = "container">
+        <h1 class="text-success" >Factura</h3>
+        <br>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nombre del cliente</span>
+            <input v-model="nombre" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Metros consumidos</span>
+            <input v-model="cantidad" type="number" class="form-control" aria-label="Sizing example input" placeholder="Ingrese los metros consumidos en el mes" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="form-check form-check-inline">
+            <input v-model ="opcValor" @change="getEstrato" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+            <label class="form-check-label" for="inlineRadio1">Estrato 1</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input v-model ="opcValor" @change="getEstrato" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+            <label class="form-check-label" for="inlineRadio2">Estrato 2</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input v-model ="opcValor" @change="getEstrato" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+            <label class="form-check-label" for="inlineRadio3">Estrato 3</label>
+        </div>
+        <br>
+        <button @click="tPagar" class="btn btn-success btn-sm col-12" >Facturar</button>
+        <br>
+        <h4>Tarifas Vigentes para cada estrato: </h4>
+        <br>
+        <h5>Estrato 1: $2.300</h5>
+        <h5>Estrato 2: $3.200</h5>
+        <h5>Estrato 3: $3.900</h5>
+        <br>
+        <h3>Registro de Facturación</h3>
+        <br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Estrato</th>
+                    <th scope="col">Cargo fijo</th>
+                    <th scope="col">Subsidio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Valor mt</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody v-if="arrayValores.length" >
+                <tr v-for="item in arrayValores" >
+                    <td v-text="item.Cliente"></td>
+                    <td v-text="item.Estrato"></td>
+                    <td v-text="item.CFijo"></td>
+                    <td v-text="item.CFijo*0.6"></td>
+                    <td v-text="item.Cantidad"></td>
+                    <td v-text="item.Precio"></td>
+                    <td v-text="item.Total"></td>
+                </tr>
+            </tbody>
+            <tbody v-else >
+                <tr style="background-color: azure;" align="center" >
+                    <td colspan="7">No existen movimientos registrados</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/ejerFactura.js"></script>
+</html>
