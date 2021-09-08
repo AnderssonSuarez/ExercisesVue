@@ -5,27 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Operaciones</title>
+    <title>Inicio</title>
 </head>
 <body>
     <div id="app">
         <div class="container">
-            <h3>Operaciones Básicas</h3>
-            <br>
-            <h1 v-text="rta"></h1>
-            <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Número 1</span>
-                <input v-model.number ="num1" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-            </div>
-            <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Número 2</span>
-                <input v-model.number="num2" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-            </div>
-            <button @click = "sumar" type="button" class="btn btn-primary">Sumar</button>
-            <button @click = "restar" type="button" class="btn btn-secondary">Restar</button>
-            <button @click = "multiplicar" type="button" class="btn btn-success">Multiplicar</button>
-            <button @click = "dividir" type="button" class="btn btn-danger">Dividir</button>
-            
+            <h3>Ejercicios Resueltos</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card col-6" style="width: 16rem;">
+                            <img src="img/operaciones.jpg" class="card-img-top" alt="..." height="160px">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ejercicio 1</h5>
+                                    <p class="card-text">Operaciones matemáticas básicas</p>
+                                    <a href="operaciones.html" class="btn btn-success">Operaciones Básicas</a>
+                                </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card col-6" style="width: 16rem;">
+                            <img src="img/calculo.png" class="card-img-top" alt="..." height="160px">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ejercicio 2</h5>
+                                    <p class="card-text">Ejercicio para calcular el total a pagar </p>
+                                    <a href="ejercicio1.html" class="btn btn-success">Total a pagar</a>
+                                </div>
+                        </div>
+                        
+                    </div>
+                </div>
         </div>
     </div>
 </body>

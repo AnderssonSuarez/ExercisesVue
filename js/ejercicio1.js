@@ -12,7 +12,7 @@ methods:
 {
     totalp ()
     {
-        if (this.valcompra > 1000000) 
+        if (this.valcompra >= 1000000) 
         {
             this.total = this.valcompra - this.valdes;
         }else if (this.valcompra < 1000000 && this.valcompra >= 0)

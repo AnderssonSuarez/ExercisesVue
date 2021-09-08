@@ -29,7 +29,7 @@ var app = new Vue({
         {
           this.rta = this.num1 / this.num2;
         }
-      }
+      },
     }
 
   });
