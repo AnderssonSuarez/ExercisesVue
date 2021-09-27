@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Admisión</title>
+</head>
+<body>
+    <div id="admision">
+        <div class="container">
+            <h3 class="text-muted" >Prueba de admisiones</h3>
+            <br>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Total Preguntas</span>
+                <input v-model.text="nPreg" placeholder="Ingrese la cantidad de preguntas del examen" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Total Preguntas Correctas</span>
+                <input @keyup.enter="agregarItem" v-model.text="nRtas" placeholder="Ingrese la cantidad de respuestas correctas" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <button type="button" @click="agregarItem" class="btn btn-success col-12" >Calcular Nota</button>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Total preguntas</th>
+                        <th scope="col">Total correctas</th>
+                        <th scope="col">Porcentaje</th>
+                        <th scope="col">Notas</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item, index) in arrayNotas" key="index" >
+                        <td v-text="item.nPreg" ></td>
+                        <td v-text="item.nRtas" ></td>
+                        <td v-text="" >na</td>
+                        <td v-text="" >na</td>
+                        <td><button class="btn btn-danger" @click="eliminar(item, index)" >Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <button type="button" @click="" class="btn btn-success col-12" >Guía de Notas</button>
+        </div>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/admision.js"></script>
+</html>
